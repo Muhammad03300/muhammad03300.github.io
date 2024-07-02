@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iToDo</title>
+    <!-- Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Add your custom styles here */
+        /* Dark mode */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #1f2937;
+                color: #f9fafb;
+            }
+        }
+    </style>
+</head>
+
+<body class="font-sans antialiased text-white bg-black">
+    <!-- Navigation bar -->
+    <nav class="bg-gray-800 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <a href="#" class="text-white text-lg font-semibold">Bakkar</a>
+                    </div>
+                    <div class="hidden md:block">
+                        <div class="ml-10 flex items-baseline space-x-4">
+                            <a href="index.html#home" class="text-gray-300 hover:text-white">Home</a>
+                            <a href="index.html#portfolio" class="nav-link text-gray-300 hover:text-white">Portfolio</a>
+                            <a href="index.html#services" class="text-gray-300 hover:text-white">Services</a>
+                            <a href="index.html#about" class="text-gray-300 hover:text-white">About</a>
+                            <a href="index.html#contact" class="text-gray-300 hover:text-white">Contact</a>             
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-4 flex items-center md:ml-6">
+                        <!-- Add your buttons or icons here -->
+                    </div>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button id="mobile-menu-toggle" class="text-gray-300 hover:text-white focus:outline-none">
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (hidden by default) -->
+        <div id="mobile-menu" class="md:hidden bg-gray-800 hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html#home"
+                    class="block text-white hover:bg-gray-700 px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="index.html#portfolio"
+                    class="block text-white hover:bg-gray-700 px-3 py-2 rounded-md text-base font-medium">Portfolio</a>
+                <a href="index.html#services"
+                    class="block text-white hover:bg-gray-700 px-3 py-2 rounded-md text-base font-medium">Services</a>
+                <a href="index.html#about"
+                    class="block text-white hover:bg-gray-700 px-3 py-2 rounded-md text-base font-medium">About</a>
+                <a href="#index.htmlcontact"
+                    class="block text-white hover:bg-gray-700 px-3 py-2 rounded-md text-base font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main content -->
+    <div class="container mx-auto my-8 px-4">
+        <h1 class="text-3xl font-bold mb-4">iToDo</h1>
+        <div class="flex flex-wrap -mx-4">
+            <!-- Project description -->
+            <div class="w-full lg:w-1/2 px-4 mb-8">
+                <p class="text-lg leading-relaxed">
+                    iTodo is a powerful yet simple-to-use task management application designed to help users stay organized and productive. Built with a combination of HTML, CSS, JavaScript, Bootstrap, PHP, and MySQL, iTodo offers a seamless experience for managing tasks with CRUD (Create, Read, Update, Delete) operations.
+                </p>
+                <p class="text-lg leading-relaxed mt-4">
+                    With iTodo, users can easily create new tasks, update their details, mark them as completed, and delete them when no longer needed. The intuitive user interface allows for quick and efficient task management, enabling users to prioritize and organize their to-do lists effectively.
+                </p>
+                <p class="text-lg leading-relaxed mt-4">
+                    iTodo provides a responsive and interactive experience, allowing users to access their tasks from any device. It includes features such as real-time updates, drag-and-drop functionality, and categorization of tasks to enhance productivity. Additionally, iTodo implements robust security measures to protect user data and ensure privacy.
+                </p>
+            </div>
+            
+
+            <!-- First Project image with fullscreen preview -->
+            <div class="w-full lg:w-1/2 px-4">
+                <img src="Screenshot-2.png" alt="Project Image" class="w-full cursor-pointer"
+                    onclick="openFullscreen('Screenshot-2.png')">
+            </div>
+        </div>
+
+        <!-- Fullscreen modal -->
+        <div id="fullscreenModal"
+            class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-90 flex justify-center items-center hidden">
+            <img id="fullscreenImage" src="Screenshot-2.png" alt="Project Image" class="max-h-full max-w-full">
+            <button class="absolute top-4 right-4 text-white text-2xl focus:outline-none"
+                onclick="closeFullscreen()">&times;</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Footer Column 1 -->
+                <div class="mb-8 md:mb-0">
+                    <h3 class="text-xl font-bold mb-4">About Me</h3>
+                    <p class="text-gray-400">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet
+                        libero dolor.</p>
+                </div>
+                <!-- Footer Column 2 -->
+                <div class="mb-8 md:mb-0">
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="text-gray-400">
+                        <li><a href="#" class="hover:text-gray-200 transition duration-300">Home</a></li>
+                        <li><a href="#" class="hover:text-gray-200 transition duration-300">About</a></li>
+                        <li><a href="#" class="hover:text-gray-200 transition duration-300">Portfolio</a></li>
+                        <li><a href="#" class="hover:text-gray-200 transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                <!-- Footer Column 3 -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Me</h3>
+                    <ul class="flex space-x-4">
+                        <li><a href="#" class="text-gray-400 hover:text-gray-200 transition duration-300">Facebook<i
+                                    class="fab fa-facebook"></i></a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-gray-200 transition duration-300">Twitter<i
+                                    class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"
+                                class="text-gray-400 hover:text-gray-200 transition duration-300">Instagram<i
+                                    class="fab fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="border-gray-800 my-8">
+            <div class="text-center text-gray-400">© 2024 Muhammad Abu Bakkar. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for fullscreen functionality -->
+    <script>
+        function openFullscreen(imageSrc) {
+            document.getElementById('fullscreenModal').classList.remove('hidden');
+            document.getElementById('fullscreenImage').src = imageSrc;
+        }
+
+        function closeFullscreen() {
+            document.getElementById('fullscreenModal').classList.add('hidden');
+        }
+
+        // JavaScript for mobile menu toggle
+        document.getElementById('mobile-menu-toggle').addEventListener('click', function () {
+            var mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+
+</html>
