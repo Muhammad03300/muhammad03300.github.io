@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delight Achar</title>
+    <!-- Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #1f2937;
+                color: #f9fafb;
+            }
+        }
+    </style>
+</head>
+
+<body class="font-sans antialiased text-white bg-black">
+    <!-- Navigation bar -->
+    <nav class="bg-gray-800 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <a href="#" class="text-white text-lg font-semibold">My Portfolio</a>
+                    </div>
+                    <div class="hidden md:block">
+                        <div class="ml-10 flex items-baseline space-x-4">
+                            <a href="#home" class="text-gray-300 hover:text-white">Home</a>
+                            <a href="#services" class="text-gray-300 hover:text-white">Services</a>
+                            <a href="#products" class="text-gray-300 hover:text-white">Products</a>
+                            <a href="#about" class="text-gray-300 hover:text-white">About</a>
+                            <a href="#contact" class="text-gray-300 hover:text-white">Contact</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-4 flex items-center md:ml-6">
+                        <!-- Add your buttons or icons here -->
+                    </div>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button id="mobile-menu-toggle" class="text-gray-300 hover:text-white focus:outline-none">
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (hidden by default) -->
+        <div id="mobile-menu" class="md:hidden bg-gray-800 hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block text-white hover:bg-gray-700 px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="#services" class="block text-white hover:bg-gray-700 px-3 py-2 rounded-md text-base font-medium">Services</a>
+                <a href="#products" class="block text-white hover:bg-gray-700 px-3 py-2 rounded-md text-base font-medium">Products</a>
+                <a href="#about" class="block text-white hover:bg-gray-700 px-3 py-2 rounded-md text-base font-medium">About</a>
+                <a href="#contact" class="block text-white hover:bg-gray-700 px-3 py-2 rounded-md text-base font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+
+<section class="container mx-auto my-12 px-4" id="home">
+    <h1 class="text-4xl font-bold mb-6 text-green-400">Delight Achar</h1>
+    <div class="flex flex-wrap items-center -mx-4">
+        <!-- Description -->
+        <div class="w-full lg:w-1/2 px-4 mb-8">
+            <p class="text-lg leading-relaxed">
+                <strong>Delight Achar</strong> is a feature-rich ecommerce website that I personally designed and developed, dedicated to selling homemade, organic pickles and chutneys. The platform offers an authentic user experience with a strong focus on tradition and taste.
+            </p>
+            <p class="text-lg leading-relaxed mt-4">
+                The website includes:
+                <ul class="list-disc list-inside mt-2 text-base text-gray-300">
+                    <li>Review & Rating System for customer feedback</li>
+                    <li>Admin Portal to manage products, categories, and orders</li>
+                    <li>Product Categories (Mango, Lemon, Garlic, Chutneys, and more)</li>
+                    <li>Related Items feature for improved product discovery</li>
+                    <li>Chutney Products along with Achars</li>
+                    <li>Online Payment Gateway integration</li>
+                    <li>Cash on Delivery (COD) option</li>
+                </ul>
+            </p>
+            <p class="text-lg leading-relaxed mt-4">
+                This project not only showcases my frontend and backend development skills but also reflects my ability to build scalable, user-friendly ecommerce systems with real-world functionality.
+            </p>
+        </div>
+        <!-- Image -->
+        <div class="w-full lg:w-1/2 px-4 mb-8">
+            <img src="pic3.png" alt="Achar products" class="w-full rounded-lg shadow-lg cursor-pointer"
+                onclick="openFullscreen('achar-sample.jpg')">
+        </div>
+    </div>
+</section>
+
+    <!-- Fullscreen Modal -->
+    <div id="fullscreenModal"
+        class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-90 flex justify-center items-center hidden z-50">
+        <img id="fullscreenImage" src="" alt="Achar Image" class="max-h-full max-w-full">
+        <button class="absolute top-4 right-4 text-white text-2xl" onclick="closeFullscreen()">&times;</button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-12 mt-12">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <h3 class="text-xl font-bold mb-4">About Delight Achar</h3>
+                <p class="text-gray-400">Delight Achar is your one-stop shop for traditional, homemade pickles. Our mission is to revive age-old recipes and deliver authentic taste across the country.</p>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                <ul class="text-gray-400 space-y-2">
+                    <li><a href="#home" class="hover:text-gray-200">Home</a></li>
+                    <li><a href="#products" class="hover:text-gray-200">Products</a></li>
+                    <li><a href="#about" class="hover:text-gray-200">About</a></li>
+                    <li><a href="#contact" class="hover:text-gray-200">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-gray-200">Facebook</a>
+                    <a href="#" class="text-gray-400 hover:text-gray-200">Instagram</a>
+                    <a href="#" class="text-gray-400 hover:text-gray-200">YouTube</a>
+                </div>
+            </div>
+        </div>
+        <hr class="border-gray-800 my-8">
+        <div class="text-center text-gray-500">© 2024 Delight Achar. All rights reserved.</div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        function openFullscreen(imageSrc) {
+            document.getElementById('fullscreenModal').classList.remove('hidden');
+            document.getElementById('fullscreenImage').src = imageSrc;
+        }
+
+        function closeFullscreen() {
+            document.getElementById('fullscreenModal').classList.add('hidden');
+            document.getElementById('fullscreenImage').src = '';
+        }
+
+        document.getElementById('mobile-menu-toggle').addEventListener('click', function () {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+</body>
+
+</html>
